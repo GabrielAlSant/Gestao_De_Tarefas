@@ -1,0 +1,93 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family:  Arial;
+}
+
+nav {
+    background-color: #dfdff4;
+    padding: 20px;
+    letter-spacing: -0.8px;
+    color:#2e4167;
+    display: flex;
+}
+
+nav h1 { 
+    margin-top: 3px;
+    margin: block;
+}
+
+input {
+     margin-top: 2px;
+    margin-left: 220px;
+    justify-content: center;
+    width: 400px;
+    border-radius: 5px;
+    border: none;
+    padding: 8px;
+    background-color: #eeeeff;
+    font-weight: bolder;
+
+}
+
+input:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+} 
+
+nav button { 
+    margin-top: 2px;
+    border: 1px solid #c2c2df;
+    padding: 8px;
+    border-radius: 5px ;
+    margin-left: 5px;
+    background-color: #eeeeff;
+    font-weight: bolder;
+
+}
+
+.AllCards{
+    display: flex;
+    margin-top: 50px;
+   }
+
+.card{
+    border: 2px solid #c2c2df;
+    padding: 15px;
+    border-radius: 5px;
+    width: 300px;
+    margin: auto;
+}
+
+.card h2{
+    padding: 5px;
+}
+
+.card .total{
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+
+.card .total{
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+
+.card .status{
+    padding-left: 5px;
+}
+
+
+.card button { 
+    margin-top: 2px;
+    border: 1px solid #c2c2df;
+    padding: 8px;
+    border-radius: 5px ;
+    margin-left: 160px;
+    background-color: #eeeeff;
+    font-weight: bolder;
+
+}
