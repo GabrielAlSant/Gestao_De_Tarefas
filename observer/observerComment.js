@@ -6,13 +6,11 @@ class Observer {
         this.tarefaId = tarefaId;
         this.newCommentUserId = newCommentUserId;
     }
-
     async notifyUsers() {
         const io = getIO();
         try {
             const tarefaDados = await tarefa.findByPk(this.tarefaId);
             if (!tarefaDados) throw new Error('Tarefa não encontrada.');
-
             const comentarios = await comentario.findAll({ where: { tarefaId: this.tarefaId } });
             const usuariosNotificados = new Set(
                 comentarios.map(comment => comment.usuarioId)
@@ -23,7 +21,7 @@ class Observer {
             usuariosNotificados.forEach(userId => {
                 if (userId) {
                     io.to(`user-${userId}`).emit('newComment', {
-                        message: 'Novo comentário em uma tarefa que você já interagiu. Número: '+ this.tarefaId + ', Titulo:' + tarefaDados.titulo + '.',
+                        message: 'Novo comentário na tarefa de número: ' + this.tarefaId + ', titulo:' + tarefaDados.titulo + '.',
                         tarefaId: this.tarefaId,
                     });
                 }

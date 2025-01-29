@@ -144,12 +144,21 @@
             </select>
 
             <br/>
-            <label for="usuarioId" class="form-label">Usuário</label>
-            <select class="form-select" id="usuarioId" name="usuarioId" required>
-                <% users.forEach(user => { %>
-                    <option value="<%= user.id %>"><%= user.nome %></option>
-                <% }); %>
-            </select>
+            <input type="hidden" name="usuarioId" id="usuarioId">
+
+
+            <script>
+                document.addEventListener("DOMContentLoaded", async function() {
+                    const userId = await JSON.parse(localStorage.getItem('user'));
+                    console.log(userId.id)
+                    if (userId) {
+                        document.getElementById("usuarioId").value = userId.id;
+                    } else {
+                        alert("Sem usuário."); 
+                    }
+                });
+            </script>
+
             <br>
 
           <div class="text-center">

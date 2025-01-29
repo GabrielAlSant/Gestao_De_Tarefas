@@ -2,7 +2,7 @@ class EventSourcing {
     constructor(logModel) {
       this.logModel = logModel;
     }
-  
+
     async createEvent(eventData) {
       try {
         await this.logModel.create(eventData);
@@ -14,3 +14,5 @@ class EventSourcing {
   }
 
   module.exports = { EventSourcing };
+
+  
