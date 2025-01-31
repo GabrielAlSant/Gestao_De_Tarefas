@@ -2,9 +2,8 @@ const { tarefa, comentario } = require('../models');
 const { getIO } = require('../bin/socket');
 
 class Observer {
-    constructor(tarefaId, newCommentUserId) {
+    constructor(tarefaId) {
         this.tarefaId = tarefaId;
-        this.newCommentUserId = newCommentUserId;
     }
     async notifyUsers() {
         const io = getIO();
@@ -16,7 +15,6 @@ class Observer {
                 comentarios.map(comment => comment.usuarioId)
             );
             usuariosNotificados.add(tarefaDados.usuarioId);
-            usuariosNotificados.delete(this.newCommentUserId);
 
             usuariosNotificados.forEach(userId => {
                 if (userId) {

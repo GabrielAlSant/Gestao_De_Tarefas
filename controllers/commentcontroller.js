@@ -20,9 +20,7 @@ const addcomentario  = async (req, res) => {
             usuarioId: usuarioId,
         });
 
-        console.log(usuarioId)
-
-        const observer = new Observer(taskId, usuarioId);
+        const observer = new Observer(taskId);
 
         await observer.notifyUsers();
 
